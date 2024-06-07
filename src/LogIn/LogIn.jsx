@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
@@ -37,17 +37,19 @@ const Login = () => {
             >
               Sign In
             </button>
-            <NavLink to="/register" className="inline-block align-baseline font-bold text-sm text-white underline hover:text-blue-800">
+            <NavLink to="/Register" className="inline-block align-baseline font-bold text-sm text-white underline hover:text-blue-800">
               Don't have an account?
             </NavLink>
           </div>
           <div className="flex items-center justify-center">
+           
             <button
               className="bg-white text-gray-800 font-bold py-2 px-4 rounded flex items-center justify-center focus:outline-none focus:ring focus:border-blue-500 hover:bg-gray-200"
               type="button"
             >
               <FcGoogle className="mr-2" /> Login with Google
             </button>
+           
           </div>
         </form>
       </div>

@@ -32,6 +32,7 @@ const MainLayOut = () => {
     const isHomePage = location.pathname === '/';
     const isAllClasses=location.pathname === '/AllClasses';
     const isLogIn=location.pathname === '/LogIn';
+    const isRegister=location.pathname === '/Register';
 
     const settings = {
         dots: false,
@@ -86,6 +87,17 @@ const MainLayOut = () => {
                 </div>
             )}
              {isLogIn && (
+                <div 
+                    className="min-h-screen bg-cover bg-center"
+                    style={{ 
+                        backgroundImage: "url('https://i.ibb.co/bvfs39Q/098b02b3138104e753440a7655ac38d5.jpg')" 
+                    }}
+                >
+                    <Navbar />
+                    <Outlet />
+                </div>
+            )}
+            {isRegister && (
                 <div 
                     className="min-h-screen bg-cover bg-center"
                     style={{ 
