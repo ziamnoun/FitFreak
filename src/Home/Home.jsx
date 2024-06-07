@@ -1,9 +1,11 @@
 
 import React from 'react';
+import FeaturedSection from '../Featured/FeaturedSection';
 
 const Home = () => {
     return (
-      <div className="hero min-h-screen bg-transparent">
+    <div className="div">
+        <div className="hero min-h-screen bg-transparent">
   <div className="hero-content text-center text-white">
     <div className="max-w-md mx-auto">
       <h1 className="text-5xl font-bold mb-4">Achieve Your Fitness Goals</h1>
@@ -12,6 +14,8 @@ const Home = () => {
     </div>
   </div>
 </div>
+<FeaturedSection></FeaturedSection>
+    </div>
 
     );
 };
