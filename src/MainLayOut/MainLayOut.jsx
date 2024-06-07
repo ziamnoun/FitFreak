@@ -30,7 +30,8 @@ import "slick-carousel/slick/slick-theme.css";
 const MainLayOut = () => {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
-    const isAllClasses=location.pathname === '/AllClasses'
+    const isAllClasses=location.pathname === '/AllClasses';
+    const isLogIn=location.pathname === '/LogIn';
 
     const settings = {
         dots: false,
@@ -78,6 +79,17 @@ const MainLayOut = () => {
                     className="min-h-screen bg-cover bg-center"
                     style={{ 
                         backgroundImage: "url('https://i.ibb.co/z5Q5VY3/360-F-492065380-e-Sl-Hdkd-NBy6-Ar-Nkk5g-V0-Lme1qhv-Tos-SI.jpg')" 
+                    }}
+                >
+                    <Navbar />
+                    <Outlet />
+                </div>
+            )}
+             {isLogIn && (
+                <div 
+                    className="min-h-screen bg-cover bg-center"
+                    style={{ 
+                        backgroundImage: "url('https://i.ibb.co/bvfs39Q/098b02b3138104e753440a7655ac38d5.jpg')" 
                     }}
                 >
                     <Navbar />
