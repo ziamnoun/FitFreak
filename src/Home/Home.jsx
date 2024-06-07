@@ -1,6 +1,7 @@
 
 import React from 'react';
 import FeaturedSection from '../Featured/FeaturedSection';
+import AboutSection from '../About/AboutSection';
 
 const Home = () => {
     return (
@@ -14,7 +15,17 @@ const Home = () => {
     </div>
   </div>
 </div>
+<div className="div">
+
+</div>
+<div className="div"
+ style={{ 
+  backgroundImage: "url('https://i.ibb.co/KjXdkGL/black-low-poly-geometric-background-vector.jpg')" 
+}}>
 <FeaturedSection></FeaturedSection>
+<AboutSection></AboutSection>
+</div>
+
     </div>
 
     );
