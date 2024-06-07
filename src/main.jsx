@@ -7,6 +7,7 @@ import {
 import "./index.css";
 import MainLayOut from "./MainLayOut/MainLayOut";
 import Home from "./Home/Home";
+import AllClasses from "./AllClasses/AllClasses";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element:<Home></Home>
+      },
+      {
+        path: "/AllClasses",
+        element:<AllClasses></AllClasses>
       }
 
     ]
