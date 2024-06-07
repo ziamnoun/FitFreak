@@ -33,6 +33,7 @@ const MainLayOut = () => {
     const isAllClasses=location.pathname === '/AllClasses';
     const isLogIn=location.pathname === '/LogIn';
     const isRegister=location.pathname === '/Register';
+    const isAllTrainers=location.pathname==='/AllTrainers';
 
     const settings = {
         dots: false,
@@ -108,6 +109,19 @@ const MainLayOut = () => {
                     <Outlet />
                 </div>
             )}
+             {isAllTrainers && (
+                <div 
+                    className="min-h-screen bg-cover bg-center"
+                    style={{ 
+                        backgroundImage: "url('https://i.ibb.co/m5FxmgM/assets-cached.jpg')" 
+                    }}
+                >
+                    <Navbar />
+                    <Outlet />
+                </div>
+            )}
+
+
           
           {isHomePage && (
                 <div className="relative z-10">
@@ -115,6 +129,7 @@ const MainLayOut = () => {
                     <Outlet />
                 </div>
             )}
+         
         </div>
     );
 };

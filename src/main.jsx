@@ -10,6 +10,7 @@ import Home from "./Home/Home";
 import AllClasses from "./AllClasses/AllClasses";
 import LogIn from "./LogIn/LogIn";
 import Register from "./Register/Register";
+import AllTrainers from "./LogIn/AllTrainers";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,12 @@ const router = createBrowserRouter([
       {
         path: "/Register",
         element:<Register></Register>
+      },
+      {
+        path: "/AllTrainers",
+        element:<AllTrainers></AllTrainers>
       }
+
 
     ]
   },
