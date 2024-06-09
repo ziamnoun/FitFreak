@@ -2,7 +2,7 @@ import React, { useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Register = () => {
   const {createUser}=useContext(AuthContext)
@@ -18,19 +18,20 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        return updateProfile(result.user, { photoURL: photoUrl });
+       
       })
       .then(() => {
-       toast.success('Successfully Registered');
+      alert('Successfully Registered');
+      //  return updateProfile(result.user, { photoURL: photoUrl });
       })
       .catch((error) => {
         console.error(error);
        
-        toast.error('Failed to Register');
+        alert('Failed to Register');
       });
 
       const userData={email,password,photoUrl}
-      fetch('http://localhost:5000/users', {
+      fetch('http://localhost:5000/user', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -41,11 +42,13 @@ const Register = () => {
         .then(data => {
             console.log(data);
             if (data.insertedId) {
-                toast.success("Successfully Added!");
+                alert("Successfully Added!");
                 setTimeout(() => {
                   window.location.reload();
               }, 2000);
+            
             }
+            else{alert('fail')}
 
         });
 
@@ -96,17 +99,7 @@ const Register = () => {
               placeholder="Password"
             />
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-400 text-sm font-bold mb-2" htmlFor="confirmPassword">
-              Confirm Password
-            </label>
-            <input
-              className="w-full px-3 py-2 bg-gray-700 text-gray-300 border border-gray-600 rounded focus:outline-none focus:ring focus:border-blue-500"
-              type="password"
-              id="confirmPassword"
-              placeholder="Confirm Password"
-            />
-          </div>
+         
         
           <div className="flex items-center justify-between mb-4">
             <button

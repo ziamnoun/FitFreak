@@ -1,6 +1,7 @@
 import React,{ createContext, useEffect, useState }from 'react';
 import PropTypes from 'prop-types'; 
 import auth from '../../firebase.config';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 
 export const AuthContext = createContext(null);
 
@@ -20,7 +21,7 @@ const AuthProvider = ({children}) => {
              setUser(currentUser)
          
             } else {
-            
+                setUser(null)
             }
           });
           return ()=>{
