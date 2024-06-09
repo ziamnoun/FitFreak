@@ -22,7 +22,7 @@ const Register = () => {
       })
       .then(() => {
         toast.success('Successfully Registered');
-      //  return updateProfile(result.user, { photoURL: photoUrl });
+       return updateProfile(result.user, { photoURL: photoUrl });
       })
       .catch((error) => {
         console.error(error);
