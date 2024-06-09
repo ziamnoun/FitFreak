@@ -2,7 +2,7 @@ import React, { useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { ToastContainer, toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
   const {createUser}=useContext(AuthContext)
@@ -21,13 +21,13 @@ const Register = () => {
        
       })
       .then(() => {
-      alert('Successfully Registered');
+        toast.success('Successfully Registered');
       //  return updateProfile(result.user, { photoURL: photoUrl });
       })
       .catch((error) => {
         console.error(error);
        
-        alert('Failed to Register');
+        toast.error('Failed to Register');
       });
 
       const userData={email,password,photoUrl}
@@ -42,13 +42,14 @@ const Register = () => {
         .then(data => {
             console.log(data);
             if (data.insertedId) {
-                alert("Successfully Added!");
-                setTimeout(() => {
-                  window.location.reload();
-              }, 2000);
+               
+              //   setTimeout(() => {
+              //     window.location.reload();
+              // }, 2000);
+              console.log("Added data")
             
             }
-            else{alert('fail')}
+            else{console.log('fail')}
 
         });
 
@@ -108,13 +109,17 @@ const Register = () => {
             >
               Register
             </button>
+            <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
             <NavLink to='/LogIn' className="inline-block align-baseline font-bold text-sm text-white underline hover:text-blue-800">
               Already have an account?
             </NavLink>
           </div>
         </form>
       </div>
-      <ToastContainer></ToastContainer>
+     
     </div>
   );
 };
