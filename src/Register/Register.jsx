@@ -1,13 +1,43 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Register = () => {
+  const {createUser}=useContext(AuthContext)
+
+  const handleRegister=e=>{
+
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const photoUrl = e.target.photoUrl.value;
+  
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        return updateProfile(result.user, { photoURL: photoUrl });
+      })
+      .then(() => {
+        alert('Successfully Registered');
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+        alert('Failed to Register');
+      });
+    }
+
+
+
+
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-transparent">
       <div className="bg-black text-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-8 text-center">Register</h2>
-        <form>
+        <form onSubmit={handleRegister}>
         <div className="mb-6">
             <label className="block text-gray-400 text-sm font-bold mb-2" htmlFor="photoUrl">
               Photo URL
@@ -56,7 +86,7 @@ const Register = () => {
           <div className="flex items-center justify-between mb-4">
             <button
               className="bg-[#333333] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-700"
-              type="button"
+             type="submit"
             >
               Register
             </button>
