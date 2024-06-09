@@ -2,10 +2,13 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
 
   const {singInUser}=useContext(AuthContext);
+
+  
 
 
   const handleLogIn=e=>{
@@ -15,13 +18,13 @@ const Login = () => {
     singInUser(email,password)
     .then(result=>{
       console.log(result.user);
-      alert("Successfully Logged In ")
+      toast.success("Successfully Logged In ")
       
      
     })
     .catch(error=>{
       console.log(error)
-      alert("Failed to Logged In ")
+      toast.error("Failed to Logged In ")
      
     })
 
@@ -66,6 +69,10 @@ const Login = () => {
             >
               Log In
             </button>
+            <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
             <NavLink to="/Register" className="inline-block align-baseline font-bold text-sm text-white underline hover:text-blue-800">
               Don't have an account?
             </NavLink>

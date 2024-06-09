@@ -1,11 +1,27 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';import Register from '../Register/Register';
+
 
 const Navbar = () => {
 
 
-  const {user}=useContext(AuthContext)
+  const {user,logOut}=useContext(AuthContext);
+  const handleLogOut=()=>{
+    logOut()
+    .then(()=>{
+      toast.success("Successfully Logged out")
+      setTimeout(() => {
+        window.location.reload();
+    }, 2000);
+    })
+    .catch(error=>{
+      toast.error("Log Out Failed");
+    })
+
+
+  }
 
   console.log(user)
 
@@ -53,7 +69,11 @@ const Navbar = () => {
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3  p-2 shadow bg-base-100 rounded-box w-52 z-[5]">
         
         <li><NavLink to="/UserProfile">{user.displayName}</NavLink></li>
-        <li><a >Log out</a></li>
+        <li><a onClick={handleLogOut}>Log out</a></li>
+        <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
       </ul>
     </div>
      

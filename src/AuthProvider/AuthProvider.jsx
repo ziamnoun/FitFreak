@@ -17,6 +17,9 @@ const AuthProvider = ({children}) => {
      
       return signInWithEmailAndPassword(auth,email,password);
   }
+  const logOut=()=>{
+    return signOut(auth);
+}
 
 
     useEffect(()=>{
@@ -39,7 +42,7 @@ const AuthProvider = ({children}) => {
 
 
     const authInfo = {
-      createUser,user,singInUser
+      createUser,user,singInUser,logOut
     }
 
 
