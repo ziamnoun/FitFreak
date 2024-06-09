@@ -28,6 +28,30 @@ const Register = () => {
        
         toast.error('Failed to Register');
       });
+
+      const userData={email,password,photoUrl}
+      fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.insertedId) {
+                toast.success("Successfully Added!");
+                setTimeout(() => {
+                  window.location.reload();
+              }, 2000);
+            }
+
+        });
+
+
+
+
     }
 
 

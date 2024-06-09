@@ -1,10 +1,11 @@
-import React,{ createContext }from 'react';
+import React,{ createContext, useEffect, useState }from 'react';
 import PropTypes from 'prop-types'; 
 import auth from '../../firebase.config';
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
+    const [user,setUser]=useState(null);
    
     const createUser = (email, password) => {
       
@@ -12,10 +13,27 @@ const AuthProvider = ({children}) => {
     }
 
 
+    useEffect(()=>{
+       const unSubscribe= onAuthStateChanged(auth, (currentUser) => {
+            if (currentUser) {
+        
+             setUser(currentUser)
+         
+            } else {
+            
+            }
+          });
+          return ()=>{
+            return unSubscribe;
+
+          }
+
+    },[])
+
 
 
     const authInfo = {
-      createUser
+      createUser,user
     }
 
 
