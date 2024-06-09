@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
   const {createUser}=useContext(AuthContext)
@@ -18,11 +19,12 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        return updateProfile(result.user, { photoURL: photoUrl });
        
       })
       .then(() => {
         toast.success('Successfully Registered');
-       return updateProfile(result.user, { photoURL: photoUrl });
+       
       })
       .catch((error) => {
         console.error(error);

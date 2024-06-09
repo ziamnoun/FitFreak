@@ -6,9 +6,9 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
 
-  const {singInUser}=useContext(AuthContext);
+  const {singInUser,signInWithGoogle}=useContext(AuthContext);
 
-  
+
 
 
   const handleLogIn=e=>{
@@ -29,6 +29,19 @@ const Login = () => {
     })
 
 
+  }
+
+  const handleGoogleLogIn=()=>{
+    signInWithGoogle()
+    .then(result=>{
+      toast.success("Successfully Logged In With Google")
+     
+      
+    })
+    .catch(error=>{
+      toast.error("Failed to Logged In ")
+     
+    })
   }
 
 
@@ -82,6 +95,7 @@ const Login = () => {
             <button
               className="bg-white text-gray-800 font-bold py-2 px-4 rounded flex items-center justify-center focus:outline-none focus:ring focus:border-blue-500 hover:bg-gray-200"
               type="button"
+              onClick={handleGoogleLogIn}
             >
               <FcGoogle className="mr-2" /> Login with Google
             </button>
