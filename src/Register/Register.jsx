@@ -2,6 +2,7 @@ import React, { useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Register = () => {
   const {createUser}=useContext(AuthContext)
@@ -20,12 +21,12 @@ const Register = () => {
         return updateProfile(result.user, { photoURL: photoUrl });
       })
       .then(() => {
-        alert('Successfully Registered');
+       toast.success('Successfully Registered');
       })
       .catch((error) => {
         console.error(error);
-        setError(error.message);
-        alert('Failed to Register');
+       
+        toast.error('Failed to Register');
       });
     }
 
@@ -96,6 +97,7 @@ const Register = () => {
           </div>
         </form>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
