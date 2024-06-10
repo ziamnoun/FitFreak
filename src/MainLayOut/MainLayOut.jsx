@@ -81,7 +81,7 @@ const MainLayOut = () => {
                 <div 
                     className="min-h-screen bg-cover bg-center"
                     style={{ 
-                        backgroundImage: "url('https://i.ibb.co/z5Q5VY3/360-F-492065380-e-Sl-Hdkd-NBy6-Ar-Nkk5g-V0-Lme1qhv-Tos-SI.jpg')" 
+                        backgroundImage: "url('https://i.ibb.co/Tktrx2b/workspace-with-books-stationery.jpg')" 
                     }}
                 >
                     <Navbar />
@@ -125,7 +125,7 @@ const MainLayOut = () => {
                 <div 
                     className="min-h-screen bg-cover bg-center"
                     style={{ 
-                        backgroundImage: "url('https://i.ibb.co/m5FxmgM/assets-cached.jpg')" 
+                        backgroundImage: "url('https://i.ibb.co/rQr2ZL1/rm314-bb-18.jpg')" 
                     }}
                 >
                     <Navbar />

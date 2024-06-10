@@ -18,6 +18,7 @@ import {
 
 } from '@tanstack/react-query'
 import AdminDashBoard from "./AdminDashBoard.jsx/AdminDashBoard";
+import AllUsers from "./AllUsers/AllUsers";
 
 const queryClient = new QueryClient()
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
 
     ]
   },
+  {
+    path: "/AllUsers",
+    element:<AllUsers></AllUsers>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

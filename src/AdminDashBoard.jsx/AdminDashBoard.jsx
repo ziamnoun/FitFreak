@@ -1,42 +1,40 @@
 import React from 'react';
-"use client";
-
-import { Sidebar } from "flowbite-react";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
+import { HiChartPie, HiViewBoards, HiInbox, HiUser, HiShoppingBag, HiArrowSmRight, HiTable } from 'react-icons/hi';
 
 const AdminDashBoard = () => {
     return (
-        <Sidebar aria-label="Sidebar with logo branding example">
-      <Sidebar.Logo href="#" img="https://marketplace.canva.com/EAFMWRbCRm0/1/0/1600w/canva-red-black-minimalist-fitness-logo-dcYVFBq4DTg.jpg" imgAlt="Flowbite logo">
-       Fit Freak
-      </Sidebar.Logo>
-      <Sidebar.Items>
-        <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
-            Dashboard
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
-            Kanban
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiInbox}>
-            Inbox
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
-            Users
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
-            Products
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight}>
-            Sign In
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiTable}>
-            Sign Up
-          </Sidebar.Item>
-        </Sidebar.ItemGroup>
-      </Sidebar.Items>
-    </Sidebar>
+        <div className="flex">
+      <div className="w-64 h-screen bg-gray-800 text-white flex flex-col">
+       
+        <ul className="flex-grow">
+          <li className="p-4 flex items-center hover:bg-gray-700">
+            <HiChartPie className="mr-3" /> Dashboard
+          </li>
+         
+          <li className="p-4 flex items-center hover:bg-gray-700">
+            <HiInbox className="mr-3" /> Inbox
+          </li>
+          <li className="p-4 flex items-center hover:bg-gray-700">
+            <HiUser className="mr-3" /> Users
+          </li>
+          <li className="p-4 flex items-center hover:bg-gray-700">
+            <HiShoppingBag className="mr-3" /> Products
+          </li>
+          <li className="p-4 flex items-center hover:bg-gray-700">
+            <HiArrowSmRight className="mr-3" /> Sign In
+          </li>
+          <li className="p-4 flex items-center hover:bg-gray-700">
+            <HiTable className="mr-3" /> Sign Up
+          </li>
+        </ul>
+      </div>
+      <div className="flex-grow p-6">
+        {/* Your main content goes here */}
+      </div>
+    </div>
     );
 };
 
 export default AdminDashBoard;
+
+
