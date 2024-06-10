@@ -20,7 +20,7 @@ const DashView = () => {
            
             <Link to='/AdminDashBoard/TrainerReq'>
             <li className="p-4 flex items-center hover:bg-gray-700">
-              <HiInbox className="mr-3" /> Trainer Request
+              <HiInbox className="mr-3" />Applied Trainer
             </li></Link>
             <Link to='/AdminDashBoard/AllUsers'><li className="p-4 flex items-center hover:bg-gray-700">
               <HiUser className="mr-3" />Users

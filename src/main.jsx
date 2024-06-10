@@ -21,6 +21,7 @@ import {
 import AllUsers from "./AllUsers/AllUsers";
 import AdminDashBoard from "./AdminDashBoard.jsx/AdminDashBoard";
 import TrainerReq from "./TrainerReq/TrainerReq";
+import BeATrainer from "./BeATrainer/BeATrainer";
 
 const queryClient = new QueryClient()
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "/AllTrainers",
         element:<AllTrainers></AllTrainers>
+      },
+      {
+        path: "/BeATrainer",
+        element:<BeATrainer></BeATrainer>
       },
    
   

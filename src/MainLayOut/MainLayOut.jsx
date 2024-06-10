@@ -35,6 +35,8 @@ const MainLayOut = () => {
     const isRegister=location.pathname === '/Register';
     const isAllTrainers=location.pathname==='/AllTrainers';
     const isDashBoard=location.pathname==='/AdminDashBoard';
+    const isAply=location.pathname==='/BeATrainer';
+    
 
     const settings = {
         dots: false,
@@ -121,6 +123,18 @@ const MainLayOut = () => {
                     <Outlet />
                 </div>
             )}
+             {isAply && (
+                <div 
+                    className="min-h-screen bg-cover bg-center"
+                    style={{ 
+                        backgroundImage: "url('https://i.ibb.co/r75SndQ/6203606.jpg')" 
+                    }}
+                >
+                    <Navbar />
+                    <Outlet />
+                </div>
+            )}
+
             
 
 
