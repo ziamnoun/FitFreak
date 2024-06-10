@@ -29,6 +29,7 @@ const Navbar = () => {
     <li><NavLink to='/' className={({isActive})=> isActive?  'border-solid border-2 border-white bg-base-50   px-4 py-2 rounded-md transition-colors duration-300 ease-in-out hover:bg-blue-600 hover:text-white' :' border-2 text-white'}>Home</NavLink></li>
     <li><NavLink to='/AllClasses' className={({isActive})=> isActive?  'border-solid border-2 border-white bg-base-50   px-4 py-2 rounded-md transition-colors duration-300 ease-in-out hover:bg-blue-600 hover:text-white' :' border-2 text-white'}>All Classes</NavLink></li>
     <li><NavLink to='/AllTrainers' className={({isActive})=> isActive?  'border-solid border-2 border-white bg-base-50   px-4 py-2 rounded-md transition-colors duration-300 ease-in-out hover:bg-blue-600 hover:text-white' :' border-2 text-white'}>All Trainers</NavLink></li>
+    <li><NavLink to='/AdminDashBoard' className={({isActive})=> isActive?  'border-solid border-2 border-white bg-base-50   px-4 py-2 rounded-md transition-colors duration-300 ease-in-out hover:bg-blue-600 hover:text-white' :' border-2 text-white'}>Dashboard</NavLink></li>
     
    
    </>
@@ -48,7 +49,15 @@ const Navbar = () => {
       {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl text-white">Fit Freak</a>
+    <a className="btn btn-ghost text-xl text-white">
+    <div className="avatar">
+    <div className="w-12">
+      <img src="https://marketplace.canva.com/EAFMWRbCRm0/1/0/1600w/canva-red-black-minimalist-fitness-logo-dcYVFBq4DTg.jpg" />
+    </div>
+    </div>
+      
+      
+        Fit Freak</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-white gap-1">

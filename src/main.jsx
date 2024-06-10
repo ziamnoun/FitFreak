@@ -17,6 +17,7 @@ import {
   QueryClientProvider,
 
 } from '@tanstack/react-query'
+import AdminDashBoard from "./AdminDashBoard.jsx/AdminDashBoard";
 
 const queryClient = new QueryClient()
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/AllTrainers",
         element:<AllTrainers></AllTrainers>
+      },
+      {
+        path: "/AdminDashBoard",
+        element:<AdminDashBoard></AdminDashBoard>
       }
 
 

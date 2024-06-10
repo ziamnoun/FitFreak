@@ -34,6 +34,7 @@ const MainLayOut = () => {
     const isLogIn=location.pathname === '/LogIn';
     const isRegister=location.pathname === '/Register';
     const isAllTrainers=location.pathname==='/AllTrainers';
+    const isDashBoard=location.pathname==='/AdminDashBoard';
 
     const settings = {
         dots: false,
@@ -110,6 +111,17 @@ const MainLayOut = () => {
                 </div>
             )}
              {isAllTrainers && (
+                <div 
+                    className="min-h-screen bg-cover bg-center"
+                    style={{ 
+                        backgroundImage: "url('https://i.ibb.co/m5FxmgM/assets-cached.jpg')" 
+                    }}
+                >
+                    <Navbar />
+                    <Outlet />
+                </div>
+            )}
+              {isDashBoard && (
                 <div 
                     className="min-h-screen bg-cover bg-center"
                     style={{ 
