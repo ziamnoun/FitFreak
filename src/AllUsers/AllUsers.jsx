@@ -1,22 +1,3 @@
-// import React from 'react';
-// import UseCart from '../CartProvider/UseCart';
-
-// const AllUsers = () => {
-
-//     const [userData]=UseCart();
-//     console.log(userData);
-
-
-
-//     return (
-//         <div className='min-h-screen bg-transparent text-white text-3xl'>
-//             Users
-            
-//         </div>
-//     );
-// };
-
-// export default AllUsers;
 
 import React from 'react';
 import UseCart from '../CartProvider/UseCart';
