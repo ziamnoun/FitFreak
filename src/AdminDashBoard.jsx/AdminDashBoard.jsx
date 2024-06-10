@@ -1,38 +1,39 @@
 import React from 'react';
 import { HiChartPie, HiViewBoards, HiInbox, HiUser, HiShoppingBag, HiArrowSmRight, HiTable } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+import DashView from '../DashView/DashView';
+import Navbar from '../Navbar/Navbar';
+
 
 const AdminDashBoard = () => {
+    const isDashBoard=location.pathname==='/AdminDashBoard';
+
+
+
+
     return (
-        <div className="flex">
-      <div className="w-64 h-screen bg-gray-800 text-white flex flex-col">
-       
-        <ul className="flex-grow">
-          <li className="p-4 flex items-center hover:bg-gray-700">
-            <HiChartPie className="mr-3" /> Dashboard
-          </li>
-         
-          <li className="p-4 flex items-center hover:bg-gray-700">
-            <HiInbox className="mr-3" /> Inbox
-          </li>
-          <Link to='/AllUsers'><li className="p-4 flex items-center hover:bg-gray-700">
-            <HiUser className="mr-3" />Users
-          </li></Link>
-          <li className="p-4 flex items-center hover:bg-gray-700">
-            <HiShoppingBag className="mr-3" /> Products
-          </li>
-          <li className="p-4 flex items-center hover:bg-gray-700">
-            <HiArrowSmRight className="mr-3" /> Sign In
-          </li>
-          <li className="p-4 flex items-center hover:bg-gray-700">
-            <HiTable className="mr-3" /> Sign Up
-          </li>
-        </ul>
-      </div>
-      <div className="flex-grow p-6">
-        {/* Your main content goes here */}
-      </div>
+
+<div className="div">
+{isDashBoard && (
+    <div 
+        className="min-h-screen bg-cover bg-center"
+        style={{ 
+            backgroundImage: "url('https://i.ibb.co/rQr2ZL1/rm314-bb-18.jpg')" 
+        }}
+    >
+        <Navbar />
+        <div className="grid grid-cols-6">
+            <DashView className="col-span-1" />
+            <div className="col-span-5">
+                <Outlet />
+            </div>
+        </div>
+        
     </div>
+)}
+</div>
+
+
     );
 };
 

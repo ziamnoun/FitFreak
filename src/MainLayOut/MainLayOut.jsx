@@ -81,7 +81,7 @@ const MainLayOut = () => {
                 <div 
                     className="min-h-screen bg-cover bg-center"
                     style={{ 
-                        backgroundImage: "url('https://i.ibb.co/Tktrx2b/workspace-with-books-stationery.jpg')" 
+                        backgroundImage: "url('https://i.ibb.co/Tktrx2b/workspace-with-books-stationery.jpgmain')" 
                     }}
                 >
                     <Navbar />
@@ -121,17 +121,7 @@ const MainLayOut = () => {
                     <Outlet />
                 </div>
             )}
-              {isDashBoard && (
-                <div 
-                    className="min-h-screen bg-cover bg-center"
-                    style={{ 
-                        backgroundImage: "url('https://i.ibb.co/rQr2ZL1/rm314-bb-18.jpg')" 
-                    }}
-                >
-                    <Navbar />
-                    <Outlet />
-                </div>
-            )}
+            
 
 
           
