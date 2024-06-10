@@ -20,6 +20,7 @@ import {
 
 import AllUsers from "./AllUsers/AllUsers";
 import AdminDashBoard from "./AdminDashBoard.jsx/AdminDashBoard";
+import TrainerReq from "./TrainerReq/TrainerReq";
 
 const queryClient = new QueryClient()
 
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
       {
         path: "/AdminDashBoard/AllUsers", 
         element: <AllUsers></AllUsers>
+      },
+      {
+        path: "/AdminDashBoard/TrainerReq",
+        element: <TrainerReq></TrainerReq>
+
       }
     ]
   }
