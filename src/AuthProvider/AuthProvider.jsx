@@ -7,6 +7,7 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null);
+    const [userEmail,setUserEmail]=useState(null);
     const googleProvider= new GoogleAuthProvider();
    
     const createUser = (email, password) => {
@@ -32,9 +33,11 @@ const signInWithGoogle=()=>{
             if (currentUser) {
         
              setUser(currentUser)
+             setUserEmail(currentUser.email)
          
             } else {
                 setUser(null)
+                setUserEmail(null)
             }
           });
           return ()=>{
@@ -47,7 +50,7 @@ const signInWithGoogle=()=>{
 
 
     const authInfo = {
-      createUser,user,singInUser,logOut,signInWithGoogle
+      createUser,user,singInUser,logOut,signInWithGoogle,userEmail
     }
 
 

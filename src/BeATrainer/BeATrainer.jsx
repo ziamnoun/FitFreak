@@ -1,68 +1,74 @@
 
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const BeATrainer = () => {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: 'user@example.com',  
-        age: '',
-        profileImage: null,
-        skills: [],
-        availableDays: [],
-        availableTime: '',
-        otherInfo: ''
-    });
-
     const skillsOptions = ['Yoga', 'Cardio', 'Strength Training', 'Pilates'];
+    const {user,userEmail}=useContext(AuthContext);
+    console.log(user,userEmail);
     const daysOptions = [
-        { value: 'Sun', label: 'Sunday' },
-        { value: 'Mon', label: 'Monday' },
-        { value: 'Tue', label: 'Tuesday' },
-        { value: 'Wed', label: 'Wednesday' },
-        { value: 'Thu', label: 'Thursday' },
-        { value: 'Fri', label: 'Friday' },
-        { value: 'Sat', label: 'Saturday' }
+        { value: 'Sunday', label: 'Sunday' },
+        { value: 'Monday', label: 'Monday' },
+        { value: 'Tuesday', label: 'Tuesday' },
+        { value: 'Wednesday', label: 'Wednesday' },
+        { value: 'Thursday', label: 'Thursday' },
+        { value: 'Friday', label: 'Friday' },
+        { value: 'Saturday', label: 'Saturday' }
     ];
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
-
-    const handleCheckboxChange = (e) => {
-        const { name, value, checked } = e.target;
-        if (name === 'skills') {
-            setFormData({
-                ...formData,
-                skills: checked 
-                    ? [...formData.skills, value] 
-                    : formData.skills.filter(skill => skill !== value)
-            });
-        }
-    };
-
-    const handleFileChange = (e) => {
-        setFormData({
-            ...formData,
-            profileImage: e.target.files[0]
-        });
-    };
-
-    const handleDaysChange = (selectedOptions) => {
-        setFormData({
-            ...formData,
-            availableDays: selectedOptions.map(option => option.value)
-        });
-    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form Data Submitted:', formData);
         
+        const formData = new FormData(e.target);
+        const skills = formData.getAll('skills');
+        const availableDays = formData.getAll('availableDays');
+
+        const submissionData = {
+            fullName: formData.get('fullName'),
+            email: formData.get('email'),
+            age: formData.get('age'),
+            profileImage: formData.get('profileImage'),
+            skills: skills,
+            availableDays: availableDays,
+            availableTime: formData.get('availableTime'),
+            otherInfo: formData.get('otherInfo')
+        };
+
+        console.log('Form Data Submitted:', submissionData);
+        fetch('http://localhost:5000/request', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(submissionData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                   
+                  //   setTimeout(() => {
+                  //     window.location.reload();
+                  // }, 2000);
+                  toast.success("Applied Successfully!")
+                  console.log("Added data")
+                
+                }
+                else{console.log('fail')}
+                toast.error("Failed to Apply")
+    
+            });
+    
+
+
+
+
+
+
+
+
     };
 
     return (
@@ -75,8 +81,6 @@ const BeATrainer = () => {
                         <input 
                             type="text" 
                             name="fullName" 
-                            value={formData.fullName} 
-                            onChange={handleChange} 
                             className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                             required 
                         />
@@ -86,8 +90,9 @@ const BeATrainer = () => {
                         <input 
                             type="email" 
                             name="email" 
-                            value={formData.email} 
+                            defaultValue={userEmail}
                             readOnly
+                         
                             className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-500 cursor-not-allowed"
                         />
                     </div>
@@ -96,21 +101,21 @@ const BeATrainer = () => {
                         <input 
                             type="number" 
                             name="age" 
-                            value={formData.age} 
-                            onChange={handleChange} 
                             className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                             required 
                         />
                     </div>
-                    <div className="mb-4">
-                        <label className="block mb-2 text-gray-400">Profile Image</label>
-                        <input 
-                            type="file" 
-                            name="profileImage" 
-                            onChange={handleFileChange} 
-                            className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                    </div>
+                    <div className="mb-6">
+            <label className="block text-gray-400 text-sm font-bold mb-2" htmlFor="photoUrl">
+              Photo URL
+            </label>
+            <input
+              className="w-full px-3 py-2 bg-gray-700 text-gray-300 border border-gray-600 rounded focus:outline-none focus:ring focus:border-blue-500"
+              type="text"
+              id="photoUrl"
+              placeholder="Photo URL"
+            />
+          </div>
                     <div className="mb-4">
                         <label className="block mb-2 text-gray-400">Skills</label>
                         {skillsOptions.map((skill, index) => (
@@ -120,8 +125,6 @@ const BeATrainer = () => {
                                         type="checkbox" 
                                         name="skills" 
                                         value={skill} 
-                                        checked={formData.skills.includes(skill)}
-                                        onChange={handleCheckboxChange}
                                         className="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
                                     <span className="ml-2">{skill}</span>
@@ -137,7 +140,9 @@ const BeATrainer = () => {
                             options={daysOptions}
                             className="basic-multi-select"
                             classNamePrefix="select"
-                            onChange={handleDaysChange}
+                            onChange={(selectedOptions) => {
+                                document.getElementsByName('availableDays')[0].value = JSON.stringify(selectedOptions.map(option => option.value));
+                            }}
                             styles={{
                                 control: (provided) => ({
                                     ...provided,
@@ -171,14 +176,13 @@ const BeATrainer = () => {
                                 }),
                             }}
                         />
+                        <input type="hidden" name="availableDays" />
                     </div>
                     <div className="mb-4">
                         <label className="block mb-2 text-gray-400">Available Time</label>
                         <input 
                             type="text" 
                             name="availableTime" 
-                            value={formData.availableTime} 
-                            onChange={handleChange} 
                             className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="e.g., 9 AM - 5 PM"
                             required 
@@ -188,8 +192,6 @@ const BeATrainer = () => {
                         <label className="block mb-2 text-gray-400">Other Information</label>
                         <textarea 
                             name="otherInfo" 
-                            value={formData.otherInfo} 
-                            onChange={handleChange} 
                             className="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                             rows="4"
                             required 
@@ -202,6 +204,10 @@ const BeATrainer = () => {
                         Apply
                     </button>
                 </form>
+                <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
             </div>
         </div>
     );
