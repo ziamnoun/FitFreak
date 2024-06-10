@@ -21,7 +21,7 @@ const AdminDashBoard = () => {
             backgroundImage: "url('https://i.ibb.co/rQr2ZL1/rm314-bb-18.jpg')" 
         }}
     >
-        <Navbar />
+       
         <div className="grid grid-cols-6">
             <DashView className="col-span-1" />
             <div className="col-span-5">

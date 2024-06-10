@@ -8,17 +8,17 @@ const UseCart = () => {
 
 
 
-  const {data:user=[]}=useQuery(
+  const {data:userData=[]}=useQuery(
     {
         queryKey: ['userData'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/users')
+            const res = await axiosSecure.get('http://localhost:5000/user')
             return res.data;
           },
 
     }
   )
-  return [cart];
+  return [userData];
 };
 
 export default UseCart;
