@@ -25,6 +25,10 @@ const DashView = () => {
             <Link to='/AdminDashBoard/AllUsers'><li className="p-4 flex items-center hover:bg-gray-700">
               <HiUser className="mr-3" />Users
             </li></Link>
+            <Link to='/AdminDashBoard/AllTrainerAdmin'><li className="p-4 flex items-center hover:bg-gray-700">
+              <HiUser className="mr-3" />All Trainer
+            </li></Link>
+            
            
             
             

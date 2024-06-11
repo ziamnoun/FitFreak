@@ -24,6 +24,7 @@ import TrainerReq from "./TrainerReq/TrainerReq";
 import BeATrainer from "./BeATrainer/BeATrainer";
 import ViewDetails from "./ViewDetails";
 import TrainerBookingPage from "./TrainerBookingPage/TrainerBookingPage";
+import AllTrainerAdmin from "./AllTrainerAdmin/AllTrainerAdmin";
 
 const queryClient = new QueryClient()
 
@@ -76,6 +77,11 @@ const router = createBrowserRouter([
       {
         path: "/AdminDashBoard/TrainerReq",
         element: <TrainerReq></TrainerReq>
+
+      },
+      {
+        path: "/AdminDashBoard/AllTrainerAdmin",
+        element: <AllTrainerAdmin></AllTrainerAdmin>
 
       }
     ]
