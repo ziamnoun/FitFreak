@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const ViewDetails = () => {
@@ -65,13 +65,21 @@ const ViewDetails = () => {
                    <h3 className="text-xl font-semibold text-red-600">Bio</h3>
                    <p>{details.otherInfo}</p>
                </div>
+               <div className="div">
+               <Link className="btn btn-primary bg-black text-white">Be A Trainer</Link>
+               </div>
            </div>
        </div>
    </div>
 </div>
+
+
 
         </div>
     );
 };
 
 export default ViewDetails;
+
+
+
