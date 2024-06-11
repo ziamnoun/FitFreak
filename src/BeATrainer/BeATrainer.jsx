@@ -24,6 +24,7 @@ const BeATrainer = () => {
         const formData = new FormData(e.target);
         const skills = formData.getAll('skills');
         const availableDays = formData.getAll('availableDays');
+        const photoUrl = e.target.photoUrl.value;
 
         const submissionData = {
             fullName: formData.get('fullName'),
@@ -33,7 +34,8 @@ const BeATrainer = () => {
             skills: skills,
             availableDays: availableDays,
             availableTime: formData.get('availableTime'),
-            otherInfo: formData.get('otherInfo')
+            otherInfo: formData.get('otherInfo'),
+            photoUrl
         };
 
         console.log('Form Data Submitted:', submissionData);
