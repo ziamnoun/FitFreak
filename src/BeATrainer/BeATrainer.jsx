@@ -63,8 +63,10 @@ const BeATrainer = () => {
                   console.log("Added data")
                 
                 }
-                else{console.log('fail')}
-                toast.error("Failed to Apply")
+                else{console.log('fail')
+                    toast.error("Failed to Apply")
+                }
+                
     
             });
     

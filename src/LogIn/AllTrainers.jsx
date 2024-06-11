@@ -9,7 +9,7 @@ const AllTrainers = () => {
     const trainers = reqData.filter(req => req.role === 'trainer');
 
     return (
-        <div>
+        <div className='grid gap-4'>
             {trainers.map((trainer, index) => (
               <div className="card card-side bg-gray-900 shadow-xl text-white md:w-[80%] m-auto gap-2 ">
               <figure><img src={trainer.photoUrl || "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"} alt="Trainer Profile"  className="w-32 h-32 rounded-full mb-4 object-cover"/></figure>
@@ -23,7 +23,7 @@ const AllTrainers = () => {
                
                 <div className="card-actions justify-end">
                 <Link to={`/ViewDetails/${trainer._id}`}>
-                <button className="btn btn-primary bg-[#333333]">Know More</button>
+                <button className="btn btn-primary bg-[#333333] hover:bg-red-600">Know More</button>
                                  </Link>
                   
                 </div>

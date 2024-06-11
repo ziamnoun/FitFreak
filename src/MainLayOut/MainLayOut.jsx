@@ -36,6 +36,7 @@ const MainLayOut = () => {
     const isAllTrainers=location.pathname==='/AllTrainers';
     const isDashBoard=location.pathname==='/AdminDashBoard';
     const isAply=location.pathname==='/BeATrainer';
+   
     
 
     const settings = {
@@ -134,6 +135,7 @@ const MainLayOut = () => {
                     <Outlet />
                 </div>
             )}
+             
 
             
 

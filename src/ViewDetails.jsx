@@ -59,14 +59,21 @@ const ViewDetails = () => {
                <div className="mb-4">
                    <h3 className="text-xl font-semibold text-red-600">Availability</h3>
                    <p><strong>Available Days:</strong> {details.availableDays.join(', ')}</p>
-                   <p><strong>Available Time:</strong> {details.availableTime.join(', ')}</p>
+                   <p><strong>Available Slot: </strong> 
+                   <Link className="btn bg-black text-white btn-primary hover:bg-red-600" to={`/TrainerBookingPage/${details._id}`} >
+                   {details.availableTime.join(', ')}
+                   
+                   </Link>
+                   
+                   
+                   </p>
                </div>
                <div className="mb-4 ">
                    <h3 className="text-xl font-semibold text-red-600">Bio</h3>
                    <p>{details.otherInfo}</p>
                </div>
                <div className="div">
-               <Link to="/BeATrainer" className="btn btn-primary bg-black text-white">Be A Trainer</Link>
+               <Link to="/BeATrainer" className="btn btn-primary bg-black text-white hover:bg-red-600">Be A Trainer</Link>
                </div>
            </div>
        </div>

@@ -23,6 +23,7 @@ import AdminDashBoard from "./AdminDashBoard.jsx/AdminDashBoard";
 import TrainerReq from "./TrainerReq/TrainerReq";
 import BeATrainer from "./BeATrainer/BeATrainer";
 import ViewDetails from "./ViewDetails";
+import TrainerBookingPage from "./TrainerBookingPage/TrainerBookingPage";
 
 const queryClient = new QueryClient()
 
@@ -56,6 +57,8 @@ const router = createBrowserRouter([
         element:<BeATrainer></BeATrainer>
       },
      
+      
+     
    
   
 
@@ -82,7 +85,13 @@ const router = createBrowserRouter([
     element: <ViewDetails></ViewDetails>,
     loader:({params})=>fetch(`http://localhost:5000/request/${params.id}`)
 
-  }
+  },
+  {
+    path: "/TrainerBookingPage/:id",
+    element:<TrainerBookingPage></TrainerBookingPage>,
+    loader:({params})=>fetch(`http://localhost:5000/request/${params.id}`)
+  },
+ 
 
  
 ]);
