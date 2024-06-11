@@ -8,6 +8,49 @@ const TrainerReq = () => {
     const [reqData]=reqCart();
     console.log(reqData);
 
+    const handleApprove = (id) => {
+        console.log(id);
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to approve this application?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, approve it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.put(`http://localhost:5000/request/${id}`, {
+                    role: "trainer"
+                })
+                .then(res => {
+                    console.log(res.data); 
+                    if (res.data.modifiedCount > 0) {
+                        Swal.fire({
+                            title: "Approved!",
+                            text: "User approved as Trainer.",
+                            icon: "success"
+                        })
+                        .then(() => {
+                            window.location.reload();
+                        });
+                    } else {
+                        throw new Error('No user role updated');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating user role:', error);
+                    Swal.fire({
+                        title: "Error!",
+                        text: "Failed to approve user as Trainer.",
+                        icon: "error"
+                    });
+                });
+            }
+        });
+    };
+
 
     const handleReject =  (id) => {
         console.log(id)
@@ -70,7 +113,7 @@ const TrainerReq = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {reqData.map((req, index) => (
+                        {reqData.filter(req => req.role !== 'trainer').map((req, index) => (
                             <tr key={index} className="border-t border-gray-700">
                                 <td className="px-4 py-2">{req.fullName}</td>
                                 <td className="px-4 py-2">{req.email}</td>
@@ -85,7 +128,7 @@ const TrainerReq = () => {
                                     </button>
                                  </Link>
                                     <button 
-                                        onClick={() => handleApprove(req._id)}
+                                        onClick={()=>handleApprove(req._id)}
                                         className="bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"
                                     >
                                         Approve

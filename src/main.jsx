@@ -55,6 +55,7 @@ const router = createBrowserRouter([
         path: "/BeATrainer",
         element:<BeATrainer></BeATrainer>
       },
+     
    
   
 
