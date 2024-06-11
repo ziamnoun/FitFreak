@@ -39,7 +39,7 @@ const ViewDetails = () => {
        <h2 className="text-3xl mb-6 text-center font-semibold text-red-600">Trainer Details:</h2>
        <div className="flex flex-col items-center">
            <img 
-               src={details.profileImage || "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"} 
+               src={details.photoUrl || "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"} 
                alt={`${details.fullName}'s profile`} 
                className="w-32 h-32 rounded-full mb-4 object-cover"
            />
@@ -59,14 +59,14 @@ const ViewDetails = () => {
                <div className="mb-4">
                    <h3 className="text-xl font-semibold text-red-600">Availability</h3>
                    <p><strong>Available Days:</strong> {details.availableDays.join(', ')}</p>
-                   <p><strong>Available Time:</strong> {details.availableTime}</p>
+                   <p><strong>Available Time:</strong> {details.availableTime.join(', ')}</p>
                </div>
                <div className="mb-4 ">
                    <h3 className="text-xl font-semibold text-red-600">Bio</h3>
                    <p>{details.otherInfo}</p>
                </div>
                <div className="div">
-               <Link className="btn btn-primary bg-black text-white">Be A Trainer</Link>
+               <Link to="/BeATrainer" className="btn btn-primary bg-black text-white">Be A Trainer</Link>
                </div>
            </div>
        </div>

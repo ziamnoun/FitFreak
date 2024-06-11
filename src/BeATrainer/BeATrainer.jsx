@@ -17,6 +17,7 @@ const BeATrainer = () => {
         { value: 'Friday', label: 'Friday' },
         { value: 'Saturday', label: 'Saturday' }
     ];
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,6 +26,10 @@ const BeATrainer = () => {
         const skills = formData.getAll('skills');
         const availableDays = formData.getAll('availableDays');
         const photoUrl = e.target.photoUrl.value;
+        const availableTime = [];
+    formData.getAll('availableTime').forEach(option => {
+        availableTime.push(option);
+    });
 
         const submissionData = {
             fullName: formData.get('fullName'),
@@ -33,7 +38,7 @@ const BeATrainer = () => {
             profileImage: formData.get('profileImage'),
             skills: skills,
             availableDays: availableDays,
-            availableTime: formData.get('availableTime'),
+            availableTime: availableTime,
             otherInfo: formData.get('otherInfo'),
             photoUrl
         };
@@ -181,7 +186,7 @@ const BeATrainer = () => {
                         <input type="hidden" name="availableDays" />
                     </div>
                     <div className="mb-4">
-                        <label className="block mb-2 text-gray-400">Available Time</label>
+                        {/* <label className="block mb-2 text-gray-400">Available Time</label>
                         <input 
                             type="text" 
                             name="availableTime" 
@@ -189,6 +194,39 @@ const BeATrainer = () => {
                             placeholder="e.g., 9 AM - 5 PM"
                             required 
                         />
+          */}
+
+
+<label className="block mb-2 text-gray-400">Available Time</label>
+    <div className="flex flex-wrap gap-4">
+        <label className="inline-flex items-center">
+            <input 
+                type="checkbox" 
+                name="availableTime" 
+                value="morning" 
+                className="form-checkbox text-blue-500 bg-gray-700 border-gray-600 rounded focus:ring-2 focus:ring-blue-500"
+            />
+            <span className="ml-2 text-gray-400">Morning</span>
+        </label>
+        <label className="inline-flex items-center">
+            <input 
+                type="checkbox" 
+                name="availableTime" 
+                value="afternoon" 
+                className="form-checkbox text-blue-500 bg-gray-700 border-gray-600 rounded focus:ring-2 focus:ring-blue-500"
+            />
+            <span className="ml-2 text-gray-400">Afternoon</span>
+        </label>
+        <label className="inline-flex items-center">
+            <input 
+                type="checkbox" 
+                name="availableTime" 
+                value="evening" 
+                className="form-checkbox text-blue-500 bg-gray-700 border-gray-600 rounded focus:ring-2 focus:ring-blue-500"
+            />
+            <span className="ml-2 text-gray-400">Evening</span>
+        </label>
+    </div>
                     </div>
                     <div className="mb-4">
                         <label className="block mb-2 text-gray-400">Other Information</label>

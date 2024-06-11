@@ -12,7 +12,7 @@ const AllTrainers = () => {
         <div>
             {trainers.map((trainer, index) => (
               <div className="card card-side bg-gray-900 shadow-xl text-white md:w-[80%] m-auto gap-2 ">
-              <figure><img src={trainer.photoURL || "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"} alt="Trainer Profile"  className="w-32 h-32 rounded-full mb-4 object-cover"/></figure>
+              <figure><img src={trainer.photoUrl || "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"} alt="Trainer Profile"  className="w-32 h-32 rounded-full mb-4 object-cover"/></figure>
               <div className="card-body">
                 <h2 className="card-title">Trainer Name: {trainer.fullName}</h2>
                 <p>Age: {trainer.age} </p>
