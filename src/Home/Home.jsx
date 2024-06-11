@@ -2,6 +2,7 @@
 import React from 'react';
 import FeaturedSection from '../Featured/FeaturedSection';
 import AboutSection from '../About/AboutSection';
+import NewsLetterSection from '../NewsLetterSection/NewsLetterSection';
 
 const Home = () => {
     return (
@@ -24,6 +25,9 @@ const Home = () => {
 }}>
 <FeaturedSection></FeaturedSection>
 <AboutSection></AboutSection>
+<NewsLetterSection></NewsLetterSection>
+
+
 </div>
 
     </div>
