@@ -3,13 +3,13 @@ import React from 'react';
 import useAxiosSecure from '../AxiosSecure/useAxiosSecure';
 
 const subsCart = () => {
-    const axiosSecure=useAxiosSecure()
+    const subsaxiosSecure=useAxiosSecure()
 
     const {data:subsData=[]}=useQuery(
       {
           queryKey: ['subscriber'],
           queryFn: async () => {
-              const res = await axiosSecure.get('http://localhost:5000/subscriber')
+              const res = await subsaxiosSecure.get('http://localhost:5000/subscriber')
               return res.data;
             },
   

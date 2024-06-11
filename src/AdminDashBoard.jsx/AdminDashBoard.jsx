@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar';
 
 const AdminDashBoard = () => {
     const isDashBoard=location.pathname==='/AdminDashBoard';
+    
 
 
 
@@ -14,7 +15,7 @@ const AdminDashBoard = () => {
     return (
 
 <div className="div">
-{isDashBoard && (
+{true && (
     <div 
         className="min-h-screen bg-cover bg-center"
         style={{ 

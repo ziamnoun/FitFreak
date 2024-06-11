@@ -25,6 +25,7 @@ import BeATrainer from "./BeATrainer/BeATrainer";
 import ViewDetails from "./ViewDetails";
 import TrainerBookingPage from "./TrainerBookingPage/TrainerBookingPage";
 import AllTrainerAdmin from "./AllTrainerAdmin/AllTrainerAdmin";
+import Subscriber from "./Subscriber/Subscriber";
 
 const queryClient = new QueryClient()
 
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
     element: <AdminDashBoard></AdminDashBoard>,
     children: [
       {
-        path: "/AdminDashBoard/AllUsers", 
+        path: "AllUsers", 
         element: <AllUsers></AllUsers>
       },
       {
@@ -83,7 +84,12 @@ const router = createBrowserRouter([
         path: "/AdminDashBoard/AllTrainerAdmin",
         element: <AllTrainerAdmin></AllTrainerAdmin>
 
-      }
+      },
+      {
+        path: "/AdminDashBoard/subscriber",
+        element: <Subscriber></Subscriber>
+
+      },
     ]
   },
   {
