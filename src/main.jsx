@@ -22,6 +22,7 @@ import AllUsers from "./AllUsers/AllUsers";
 import AdminDashBoard from "./AdminDashBoard.jsx/AdminDashBoard";
 import TrainerReq from "./TrainerReq/TrainerReq";
 import BeATrainer from "./BeATrainer/BeATrainer";
+import ViewDetails from "./ViewDetails";
 
 const queryClient = new QueryClient()
 
@@ -74,6 +75,12 @@ const router = createBrowserRouter([
 
       }
     ]
+  },
+  {
+    path: "/ViewDetails/:id",
+    element: <ViewDetails></ViewDetails>,
+    loader:({params})=>fetch(`http://localhost:5000/request/${params.id}`)
+
   }
 
  
