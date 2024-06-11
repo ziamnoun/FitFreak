@@ -47,7 +47,7 @@
 // export default TrainerBookingPage;
 
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const TrainerBookingPage = () => {
@@ -93,7 +93,7 @@ const TrainerBookingPage = () => {
                     <h2 className="text-3xl mb-6 text-center font-semibold text-red-600">Trainer Details</h2>
                     <div className="flex flex-col items-center">
                         <img 
-                            src={details.profileImage || "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"} 
+                            src={details.photoUrl || "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"} 
                             alt={`${details.fullName}'s profile`} 
                             className="w-32 h-32 rounded-full mb-4 object-cover"
                         />
@@ -117,12 +117,13 @@ const TrainerBookingPage = () => {
                                                 {pkg === 'Standard' && 'All benefits of the basic membership. Use of cardio and strength training equipment. Access to locker rooms and showers. Price: $50'}
                                                 {pkg === 'Premium' && 'All benefits of the standard membership. Access to group fitness classes such as yoga, spinning, and Zumba. Use of additional amenities like a sauna or steam room. Access to personal training sessions with certified trainers. Discounts on additional services such as massage therapy or nutrition counseling. Price: $100'}
                                             </p>
-                                            <button 
+                                           <Link to="/payment">
+                                           <button 
                                                 className="btn btn-primary bg-black text-white mt-2"
                                                 onClick={() => handleJoinNow(pkg)}
                                             >
-                                                Join Now
-                                            </button>
+                                                Pay to join
+                                            </button></Link>
                                         </div>
                                     ))}
                                 </div>

@@ -26,6 +26,7 @@ import ViewDetails from "./ViewDetails";
 import TrainerBookingPage from "./TrainerBookingPage/TrainerBookingPage";
 import AllTrainerAdmin from "./AllTrainerAdmin/AllTrainerAdmin";
 import Subscriber from "./Subscriber/Subscriber";
+import Payment from "./Payment/Payment";
 
 const queryClient = new QueryClient()
 
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/BeATrainer",
         element:<BeATrainer></BeATrainer>
+      },
+      {
+        path: "/payment",
+        element:<Payment></Payment>
       },
      
       
