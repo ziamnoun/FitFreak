@@ -1,5 +1,5 @@
 import React, { useContext} from 'react';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
@@ -7,6 +7,7 @@ import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
   const {createUser}=useContext(AuthContext)
+
 
   const handleRegister=e=>{
 
@@ -24,6 +25,7 @@ const Register = () => {
       })
       .then(() => {
         toast.success('Successfully Registered');
+     
        
       })
       .catch((error) => {
@@ -49,6 +51,7 @@ const Register = () => {
               //     window.location.reload();
               // }, 2000);
               console.log("Added data")
+            
             
             }
             else{console.log('fail')}

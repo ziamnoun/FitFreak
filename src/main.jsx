@@ -30,6 +30,11 @@ import Payment from "./Payment/Payment";
 import Balance from "./Balance/Balance";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AddClasses from "./Addclasses/AddClasses";
+import ManageSlot from "./ManageSlot/ManageSlot";
+import AddNewSlot from "./AddNewSlot/AddNewSlot";
+import Forum from "./Forum/Forum";
+import NewPost from "./AddNewForum/NewPost";
+import UploadAPost from "./AddNewForum/UploadAPost";
 
 const queryClient = new QueryClient()
 
@@ -65,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/payment",
         element:<PrivateRoute><Payment></Payment></PrivateRoute>,
+      },
+      {
+        path: "/forum",
+        element:<Forum></Forum>
       },
      
       
@@ -108,7 +117,22 @@ const router = createBrowserRouter([
         element: <AddClasses></AddClasses>,
 
       },
+      {
+        path: "/AdminDashBoard/manageSlot",
+        element:<ManageSlot></ManageSlot>
+
+      },
+      {
+        path: "/AdminDashBoard/addnewslot",
+        element:<AddNewSlot></AddNewSlot>,
+
+      },
     ]
+  },
+  {
+    path: "/uploadpost",
+    element:<UploadAPost></UploadAPost>,
+
   },
   {
     path: "/ViewDetails/:id",

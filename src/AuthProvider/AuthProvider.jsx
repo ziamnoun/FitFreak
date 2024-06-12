@@ -8,6 +8,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null);
     const [userEmail,setUserEmail]=useState(null);
+    const [isAdmin, setIsAdmin] = useState(false);
     const googleProvider= new GoogleAuthProvider();
    
     const createUser = (email, password) => {
@@ -34,10 +35,16 @@ const signInWithGoogle=()=>{
         
              setUser(currentUser)
              setUserEmail(currentUser.email)
+             if (currentUser.email.toLowerCase() === 'miketyson@gmail.com') {
+              setIsAdmin(true); 
+          } else {
+              setIsAdmin(false); 
+          }
          
             } else {
                 setUser(null)
                 setUserEmail(null)
+                setIsAdmin(false); 
             }
           });
           return ()=>{
@@ -47,10 +54,12 @@ const signInWithGoogle=()=>{
 
     },[])
 
+    console.log(isAdmin)
+
 
 
     const authInfo = {
-      createUser,user,singInUser,logOut,signInWithGoogle,userEmail
+      createUser,user,singInUser,logOut,signInWithGoogle,userEmail,isAdmin
     }
 
 

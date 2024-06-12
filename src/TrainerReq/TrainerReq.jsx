@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 const TrainerReq = () => {
-    const [reqData]=reqCart();
+    const [reqData] = reqCart();
     console.log(reqData);
 
     const handleApprove = (id) => {

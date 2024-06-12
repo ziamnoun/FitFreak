@@ -37,7 +37,8 @@ const MainLayOut = () => {
     const isAllTrainers=location.pathname==='/AllTrainers';
     const isDashBoard=location.pathname==='/AdminDashBoard';
     const isAply=location.pathname==='/BeATrainer';
-    const isPay=location.pathname==='/payment'
+    const isPay=location.pathname==='/payment';
+     const isForum=location.pathname==='/forum';
    
     
 
@@ -147,6 +148,18 @@ const MainLayOut = () => {
                     className="min-h-screen bg-cover bg-center"
                     style={{ 
                         backgroundImage: "url('https://img.freepik.com/free-vector/realistic-elegant-geometric-shapes-wallpaper-design_23-2148438261.jpg')" 
+                    }}
+                >
+                    <Navbar />
+                    <Outlet />
+                    <Footer></Footer>
+                </div>
+            )}
+             {isForum && (
+                <div 
+                    className="min-h-screen bg-cover bg-center"
+                    style={{ 
+                        backgroundImage: "url('https://i.ibb.co/r75SndQ/6203606.jpg')" 
                     }}
                 >
                     <Navbar />
