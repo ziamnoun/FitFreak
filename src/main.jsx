@@ -35,6 +35,7 @@ import AddNewSlot from "./AddNewSlot/AddNewSlot";
 import Forum from "./Forum/Forum";
 import NewPost from "./AddNewForum/NewPost";
 import UploadAPost from "./AddNewForum/UploadAPost";
+import BookedTrainer from "./BookedTrainer/BookedTrainer";
 
 const queryClient = new QueryClient()
 
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
       {
         path: "/forum",
         element:<Forum></Forum>
+      },
+      {
+        path: "/booktrainer",
+        element:<BookedTrainer></BookedTrainer>
       },
      
       
@@ -127,6 +132,7 @@ const router = createBrowserRouter([
         element:<AddNewSlot></AddNewSlot>,
 
       },
+      
     ]
   },
   {

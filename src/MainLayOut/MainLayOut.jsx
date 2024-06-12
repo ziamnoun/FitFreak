@@ -1,25 +1,4 @@
-// import React from 'react';
-// import Navbar from '../Navbar/Navbar';
-// import { Outlet } from 'react-router-dom';
 
-// const MainLayOut = () => {
-//     return (
-        
-//         <div className=' min-h-screen'
-//         style={{ 
-//             backgroundImage: "url('https://i.ibb.co/z5Q5VY3/360-F-492065380-e-Sl-Hdkd-NBy6-Ar-Nkk5g-V0-Lme1qhv-Tos-SI.jpg')", 
-//             backgroundSize: 'cover', 
-//             backgroundPosition: 'center' 
-//         }}>
-//             <Navbar></Navbar>
-//             <Outlet></Outlet>
-          
-//          </div>
-        
-//     );
-// };
-
-// export default MainLayOut;
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Outlet, useLocation } from 'react-router-dom';
@@ -39,6 +18,7 @@ const MainLayOut = () => {
     const isAply=location.pathname==='/BeATrainer';
     const isPay=location.pathname==='/payment';
      const isForum=location.pathname==='/forum';
+     const isBookedTrainer=location.pathname==='/booktrainer'
    
     
 
@@ -160,6 +140,18 @@ const MainLayOut = () => {
                     className="min-h-screen bg-cover bg-center"
                     style={{ 
                         backgroundImage: "url('https://i.ibb.co/r75SndQ/6203606.jpg')" 
+                    }}
+                >
+                    <Navbar />
+                    <Outlet />
+                    <Footer></Footer>
+                </div>
+            )}
+              {isBookedTrainer && (
+                <div 
+                    className="min-h-screen bg-cover bg-center"
+                    style={{ 
+                        backgroundImage: "url('https://i.ibb.co/bvfs39Q/098b02b3138104e753440a7655ac38d5.jpg')" 
                     }}
                 >
                     <Navbar />
