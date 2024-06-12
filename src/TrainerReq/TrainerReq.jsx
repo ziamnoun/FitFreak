@@ -21,7 +21,7 @@ const TrainerReq = () => {
             confirmButtonText: "Yes, approve it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.put(`http://localhost:5000/request/${id}`, {
+                axios.put(`https://final-project-fit-server.vercel.app/request/${id}`, {
                     role: "trainer"
                 })
                 .then(res => {
@@ -65,7 +65,7 @@ const TrainerReq = () => {
                 confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/request/${id}`, {
+                    fetch(`https://final-project-fit-server.vercel.app/request/${id}`, {
                         method: "DELETE"
                     })
                     .then(res => res.json())

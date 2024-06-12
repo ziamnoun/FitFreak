@@ -50,7 +50,7 @@ const Register = () => {
       });
 
       const userData={email,password,photoUrl}
-      fetch('http://localhost:5000/user', {
+      fetch('https://final-project-fit-server.vercel.app/user', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

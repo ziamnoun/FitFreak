@@ -15,7 +15,7 @@ const NewsLetterSection = () => {
 
         const SubsData={email,name}
 
-        fetch('http://localhost:5000/subscriber', {
+        fetch('https://final-project-fit-server.vercel.app/subscriber', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

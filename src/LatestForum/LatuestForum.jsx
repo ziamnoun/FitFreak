@@ -1,5 +1,6 @@
 import React from 'react';
 import posrCart from '../CartProvider/posrCart';
+import { Link } from 'react-router-dom';
 
 const LatestForum = () => {
     const [postData] = posrCart();
@@ -15,9 +16,10 @@ const LatestForum = () => {
                     <div key={index} className="bg-black rounded-lg shadow-lg p-4 text-white">
                         <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
                         <p className="text-gray-400">{post.content.slice(0, 50)}...</p>
-                        <button className="bg-red-600 text-white py-2 px-4 rounded-md shadow-md mt-4 hover:bg-blue-600 transition duration-300">
+                       <Link to='/forum'>
+                       <button className="bg-red-600 text-white py-2 px-4 rounded-md shadow-md mt-4 hover:bg-blue-600 transition duration-300">
                             Explore More
-                        </button>
+                        </button></Link>
                     </div>
                 ))}
             </div>

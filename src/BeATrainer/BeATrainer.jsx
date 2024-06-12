@@ -44,7 +44,7 @@ const BeATrainer = () => {
         };
 
         console.log('Form Data Submitted:', submissionData);
-        fetch('http://localhost:5000/request', {
+        fetch('https://final-project-fit-server.vercel.app/request', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

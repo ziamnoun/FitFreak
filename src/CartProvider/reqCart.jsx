@@ -14,7 +14,7 @@ const reqCart = () => {
     {
         queryKey: ['request'],
         queryFn: async () => {
-            const res = await reqAxiosSecure.get('http://localhost:5000/request')
+            const res = await reqAxiosSecure.get('https://final-project-fit-server.vercel.app/request')
             return res.data;
           },
 

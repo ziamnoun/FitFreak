@@ -12,7 +12,7 @@ const TrainerBookingPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:5000/request')
+        axios.get('https://final-project-fit-server.vercel.app/request')
             .then(response => {
                 setAllData(response.data);
             })

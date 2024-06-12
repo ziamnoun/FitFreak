@@ -10,7 +10,7 @@ const UseCart = () => {
       {
           queryKey: ['user'],
           queryFn: async () => {
-              const res = await axiosSecure.get('http://localhost:5000/user')
+              const res = await axiosSecure.get('https://final-project-fit-server.vercel.app/user')
               return res.data;
             },
   

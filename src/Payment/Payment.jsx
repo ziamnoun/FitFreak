@@ -24,7 +24,7 @@
 
 //   useEffect(() => {
 //     if (price) {
-//       axiosSecure.post('http://localhost:5000/create-payment-intent', { money: price })
+//       axiosSecure.post('https://final-project-fit-server.vercel.app/create-payment-intent', { money: price })
 //         .then(res => {
 //           console.log(res.data.clientSecret);
 //           setClientSecret(res.data.clientSecret);
@@ -89,7 +89,7 @@
 //             status:'Paid'
 //         }
 //         try {
-//             const res = await axiosSecure.post('http://localhost:5000/payments', paymentInfo);
+//             const res = await axiosSecure.post('https://final-project-fit-server.vercel.app/payments', paymentInfo);
 //             console.log('Payment saved:', res);
 //             toast.success('Successfully paid');
 //           } catch (saveError) {
@@ -189,7 +189,7 @@ const PaymentForm = () => {
 
   useEffect(() => {
     if (price) {
-      axiosSecure.post('http://localhost:5000/create-payment-intent', { money: price })
+      axiosSecure.post('https://final-project-fit-server.vercel.app/create-payment-intent', { money: price })
         .then(res => {
           console.log(res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
@@ -256,7 +256,7 @@ const PaymentForm = () => {
         };
 
         try {
-          const res = await axiosSecure.post('http://localhost:5000/payments', paymentInfo);
+          const res = await axiosSecure.post('https://final-project-fit-server.vercel.app/payments', paymentInfo);
           console.log('Payment saved:', res);
           toast.success('Successfully paid');
         } catch (saveError) {

@@ -26,7 +26,7 @@ const AddNewSlot = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/request');
+        const response = await axios.get('https://final-project-fit-server.vercel.app/request');
         setReqData(response.data);
       } catch (error) {
         console.error('Error fetching request data:', error);
@@ -57,7 +57,7 @@ const AddNewSlot = () => {
 
     try {
       
-      const response = await axios.put(`http://localhost:5000/request/${existingSlot._id}`, updatedSlot);
+      const response = await axios.put(`https://final-project-fit-server.vercel.app/request/${existingSlot._id}`, updatedSlot);
       console.log(response.data); 
       
       toast.success('Updated!')

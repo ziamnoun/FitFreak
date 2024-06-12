@@ -11,7 +11,7 @@ const UploadAPost = () => {
         e.preventDefault();
         
         const newPost = { title, content, user };
-        fetch('http://localhost:5000/allpost', {
+        fetch('https://final-project-fit-server.vercel.app/allpost', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

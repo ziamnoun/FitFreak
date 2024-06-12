@@ -143,13 +143,13 @@ const router = createBrowserRouter([
   {
     path: "/ViewDetails/:id",
     element: <ViewDetails></ViewDetails>,
-    loader:({params})=>fetch(`http://localhost:5000/request/${params.id}`)
+    loader:({params})=>fetch(`https://final-project-fit-server.vercel.app/request/${params.id}`)
 
   },
   {
     path: "/TrainerBookingPage/:id",
     element:<PrivateRoute><TrainerBookingPage></TrainerBookingPage></PrivateRoute>,
-    loader:({params})=>fetch(`http://localhost:5000/request/${params.id}`)
+    loader:({params})=>fetch(`https://final-project-fit-server.vercel.app/request/${params.id}`)
   },
  
 

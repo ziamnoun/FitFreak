@@ -13,7 +13,7 @@ const posrCart = () => {
     {
         queryKey: ['allpost'],
         queryFn: async () => {
-            const res = await postAxiosSecure.get('http://localhost:5000/allpost')
+            const res = await postAxiosSecure.get('https://final-project-fit-server.vercel.app/allpost')
             return res.data;
           },
 

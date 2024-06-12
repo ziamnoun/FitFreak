@@ -10,7 +10,7 @@ const UsePayCart = () => {
       {
           queryKey: ['user'],
           queryFn: async () => {
-              const res = await axiosSecure.get('http://localhost:5000/payments')
+              const res = await axiosSecure.get('https://final-project-fit-server.vercel.app/payments')
               return res.data;
             },
   

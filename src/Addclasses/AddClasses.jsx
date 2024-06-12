@@ -23,7 +23,7 @@
 //         additionalInfoInput.value = '';
 
 //         const allClassInfo={classname,image,details,additionalInfo};
-//         fetch('http://localhost:5000/allclass', {
+//         fetch('https://final-project-fit-server.vercel.app/allclass', {
 //             method: 'POST',
 //             headers: {
 //                 'content-type': 'application/json'
@@ -126,7 +126,7 @@ const AddClasses = ({ onAddClass }) => {
         slotInput.value = 'morning'; 
 
         const allClassInfo = { classname, image, details, additionalInfo, slot };
-        fetch('http://localhost:5000/allclass', {
+        fetch('https://final-project-fit-server.vercel.app/allclass', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

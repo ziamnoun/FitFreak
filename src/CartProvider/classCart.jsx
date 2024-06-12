@@ -9,7 +9,7 @@ const classCart = () => {
       {
           queryKey: ['allclass'],
           queryFn: async () => {
-              const res = await subsaxiosSecure.get('http://localhost:5000/allclass')
+              const res = await subsaxiosSecure.get('https://final-project-fit-server.vercel.app/allclass')
               return res.data;
             },
   

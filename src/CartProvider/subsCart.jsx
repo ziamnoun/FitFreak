@@ -9,7 +9,7 @@ const subsCart = () => {
       {
           queryKey: ['subscriber'],
           queryFn: async () => {
-              const res = await subsaxiosSecure.get('http://localhost:5000/subscriber')
+              const res = await subsaxiosSecure.get('https://final-project-fit-server.vercel.app/subscriber')
               return res.data;
             },
   
