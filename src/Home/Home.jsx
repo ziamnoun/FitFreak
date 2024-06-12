@@ -3,6 +3,9 @@ import React from 'react';
 import FeaturedSection from '../Featured/FeaturedSection';
 import AboutSection from '../About/AboutSection';
 import NewsLetterSection from '../NewsLetterSection/NewsLetterSection';
+import FeateredClass from '../FeateredClass/FeateredClass';
+import LatestForum from '../LatestForum/LatuestForum';
+import TeamSection from '../TeamSection/TeamSection';
 
 const Home = () => {
     return (
@@ -25,7 +28,10 @@ const Home = () => {
 }}>
 <FeaturedSection></FeaturedSection>
 <AboutSection></AboutSection>
+<FeateredClass></FeateredClass>
+<LatestForum></LatestForum>
 <NewsLetterSection></NewsLetterSection>
+<TeamSection></TeamSection>
 
 
 </div>

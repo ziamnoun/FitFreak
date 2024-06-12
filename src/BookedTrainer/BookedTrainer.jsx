@@ -40,14 +40,14 @@ const BookedTrainer = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900 p-6 text-white">
+        <div className="min-h-screen bg-transparent p-6 text-white">
             <h1 className="text-3xl font-bold mb-6">Booked Trainers</h1>
             {filteredPayments.length > 0 ? (
                 filteredPayments.map(payment => {
                     const trainer = reqData.find(trainer => trainer._id === payment.trainerId);
 
                     return (
-                        <div key={payment._id} className="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+                        <div key={payment._id} className=" p-4 rounded-lg shadow-lg mb-4">
                             <h2 className="text-xl font-semibold">Package: {payment.selectedPackage}</h2>
                             <p className="mt-2">Price: ${payment.price}</p>
                             <p className="mt-2">Date: {new Date(payment.date).toLocaleDateString()}</p>
@@ -56,9 +56,10 @@ const BookedTrainer = () => {
                             {trainer && (
                                 <>
                                     <h3 className="text-lg font-semibold mt-4">Trainer Information</h3>
-                                    <p className="mt-2">Trainer Name: {trainer.name}</p>
+                                    <p className="mt-2">Trainer Name: {trainer.fullName}</p>
                                     <p className="mt-2">Trainer Email: {trainer.email}</p>
-                                    <p className="mt-2">Trainer Specialty: {trainer.specialty}</p>
+                                    <p className="mt-2">Trainer Specialty: {trainer.fullName}</p>
+                                    <p className="mt-2">Trainer Slot: {trainer.availableTime}</p>
                                     <button
                                         onClick={() => openModal(trainer)}
                                         className="mt-4 px-4 py-2 bg-indigo-500 text-white rounded-lg"

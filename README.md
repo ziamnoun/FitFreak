@@ -1,8 +1,9 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.Its A FItness web site.
+2.Its a Dynamic Website.
+3.It is made by using react,tailwind css,other css library.
+4.In its backend we use mongodb,firebase etc.
+5.For payment method tripe was used.
+6.React Icon was used for icon.
+7.node js,express was used.
+8.Vercel used for deploy backend data.
+9.Netlify used for deploy frontend data.
