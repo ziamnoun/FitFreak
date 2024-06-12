@@ -28,6 +28,8 @@ import AllTrainerAdmin from "./AllTrainerAdmin/AllTrainerAdmin";
 import Subscriber from "./Subscriber/Subscriber";
 import Payment from "./Payment/Payment";
 import Balance from "./Balance/Balance";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AddClasses from "./Addclasses/AddClasses";
 
 const queryClient = new QueryClient()
 
@@ -58,11 +60,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/BeATrainer",
-        element:<BeATrainer></BeATrainer>
+        element:<PrivateRoute><BeATrainer></BeATrainer></PrivateRoute>,
       },
       {
         path: "/payment",
-        element:<Payment></Payment>
+        element:<PrivateRoute><Payment></Payment></PrivateRoute>,
       },
      
       
@@ -101,6 +103,11 @@ const router = createBrowserRouter([
         element: <Balance></Balance>,
 
       },
+      {
+        path: "/AdminDashBoard/addClasses",
+        element: <AddClasses></AddClasses>,
+
+      },
     ]
   },
   {
@@ -111,7 +118,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/TrainerBookingPage/:id",
-    element:<TrainerBookingPage></TrainerBookingPage>,
+    element:<PrivateRoute><TrainerBookingPage></TrainerBookingPage></PrivateRoute>,
     loader:({params})=>fetch(`http://localhost:5000/request/${params.id}`)
   },
  

@@ -26,6 +26,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Footer from '../Footer/Footer';
 
 const MainLayOut = () => {
     const location = useLocation();
@@ -90,6 +91,7 @@ const MainLayOut = () => {
                 >
                     <Navbar />
                     <Outlet />
+                    <Footer></Footer>
                 </div>
             )}
              {isLogIn && (
@@ -101,6 +103,7 @@ const MainLayOut = () => {
                 >
                     <Navbar />
                     <Outlet />
+                    <Footer></Footer>
                 </div>
             )}
             {isRegister && (
@@ -112,6 +115,7 @@ const MainLayOut = () => {
                 >
                     <Navbar />
                     <Outlet />
+                    <Footer></Footer>
                 </div>
             )}
              {isAllTrainers && (
@@ -123,6 +127,7 @@ const MainLayOut = () => {
                 >
                     <Navbar />
                     <Outlet />
+                    <Footer></Footer>
                 </div>
             )}
              {isAply && (
@@ -134,6 +139,7 @@ const MainLayOut = () => {
                 >
                     <Navbar />
                     <Outlet />
+                    <Footer></Footer>
                 </div>
             )}
               {isPay && (
@@ -145,6 +151,7 @@ const MainLayOut = () => {
                 >
                     <Navbar />
                     <Outlet />
+                    <Footer></Footer>
                 </div>
             )}
              
@@ -157,6 +164,7 @@ const MainLayOut = () => {
                 <div className="relative z-10">
                     <Navbar />
                     <Outlet />
+                    <Footer></Footer>
                 </div>
             )}
          

@@ -34,6 +34,9 @@ const DashView = () => {
             <Link to='/AdminDashBoard/balance'><li className="p-4 flex items-center hover:bg-gray-700">
               <HiUser className="mr-3" />Balance
             </li></Link>
+            <Link to='/AdminDashBoard/addClasses'><li className="p-4 flex items-center hover:bg-gray-700">
+              <HiUser className="mr-3" />Add Classes
+            </li></Link>
             
            
             
