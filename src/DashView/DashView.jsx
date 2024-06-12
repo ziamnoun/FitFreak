@@ -29,7 +29,10 @@ const DashView = () => {
               <HiUser className="mr-3" />All Trainer
             </li></Link>
             <Link to='/AdminDashBoard/subscriber'><li className="p-4 flex items-center hover:bg-gray-700">
-              <HiUser className="mr-3" />Subscriber
+              <HiUser className="mr-3" />All Subscriber
+            </li></Link>
+            <Link to='/AdminDashBoard/balance'><li className="p-4 flex items-center hover:bg-gray-700">
+              <HiUser className="mr-3" />Balance
             </li></Link>
             
            

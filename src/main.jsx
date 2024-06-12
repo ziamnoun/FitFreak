@@ -27,6 +27,7 @@ import TrainerBookingPage from "./TrainerBookingPage/TrainerBookingPage";
 import AllTrainerAdmin from "./AllTrainerAdmin/AllTrainerAdmin";
 import Subscriber from "./Subscriber/Subscriber";
 import Payment from "./Payment/Payment";
+import Balance from "./Balance/Balance";
 
 const queryClient = new QueryClient()
 
@@ -93,6 +94,11 @@ const router = createBrowserRouter([
       {
         path: "/AdminDashBoard/subscriber",
         element: <Subscriber></Subscriber>
+
+      },
+      {
+        path: "/AdminDashBoard/balance",
+        element: <Balance></Balance>,
 
       },
     ]
