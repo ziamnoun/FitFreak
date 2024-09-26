@@ -78,7 +78,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/booktrainer",
-        element:<BookedTrainer></BookedTrainer>
+        element:<PrivateRoute><BookedTrainer></BookedTrainer></PrivateRoute>
       },
      
       
