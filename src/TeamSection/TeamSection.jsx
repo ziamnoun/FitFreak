@@ -15,7 +15,7 @@ const TeamSection = () => {
                     {oldestTrainers.map((trainer, index) => (
                         <div key={index} className="bg-gray-800 rounded-lg shadow-lg text-white p-6">
                             <h3 className="text-xl font-semibold mb-2">{trainer.fullName}</h3>
-                            <img src={trainer.photoUrl} alt={trainer.fullName} className="w-50 h-auto rounded-lg mb-2" />
+                            <img src={trainer.photoUrl} alt={trainer.fullName} className="w-50 h-[50%] rounded-lg mb-2" />
                             <p className="text-gray-400">Role: {trainer.role}</p>
                             <p className="text-gray-400">Skills: {trainer.skills.join(', ')}</p>
                         </div>
