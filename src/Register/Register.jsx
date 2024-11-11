@@ -122,7 +122,7 @@ const Register = () => {
           </div>
          
         
-          <div className="flex items-center justify-between mb-4">
+          <div className="md:flex items-center justify-between mb-4">
             <button
               className="bg-[#333333] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-700"
              type="submit"
